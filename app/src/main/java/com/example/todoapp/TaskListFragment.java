@@ -22,10 +22,10 @@ public class TaskListFragment extends Fragment {
     private TaskAdapter adapter;
     public static String KEY_EXTRA_TASK_ID = "com.example.todoapp";
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+//    @Override
+//    public void onCreate(@Nullable Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//    }
 
     @Override
     public void onResume() {
@@ -36,7 +36,7 @@ public class TaskListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
+        //super.onCreateView(inflater, container, savedInstanceState);
 
         View view = inflater.inflate(R.layout.fragment_task_list,container,false);
         recyclerView = view.findViewById(R.id.task_recycler_view);
@@ -65,16 +65,6 @@ public class TaskListFragment extends Fragment {
             nameTextView.setText(task.getName());
             dateTextView.setText(task.getDate().toString());
 
-//            if (task.isDone())
-//            {
-//                nameTextView.setPaintFlags(nameTextView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-//                dateTextView.setPaintFlags(dateTextView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-//            }
-//            else
-//            {
-//                nameTextView.setPaintFlags(nameTextView.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-//                dateTextView.setPaintFlags(dateTextView.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-//            }
         }
 
         @Override

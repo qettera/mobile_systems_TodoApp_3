@@ -28,9 +28,10 @@ public class TaskFragment extends Fragment {
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        assert getArguments() != null;
         UUID taskId = (UUID) getArguments().getSerializable(ARG_TASK_ID);
         task = TaskStorage.getInstance().getTask(taskId);
     }
@@ -46,12 +47,14 @@ public class TaskFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
+        //super.onCreateView(inflater, container, savedInstanceState);
 
         View view = inflater.inflate(R.layout.fragment_task, container, false);
-        nameField = view.findViewById(R.id.task_name);
         dateButton = view.findViewById(R.id.task_date);
         doneCheckBox = view.findViewById(R.id.task_done);
+
+        nameField = view.findViewById(R.id.task_name);
+        nameField.setText(task.getName());
 
         nameField.addTextChangedListener(new TextWatcher() {
             @Override
