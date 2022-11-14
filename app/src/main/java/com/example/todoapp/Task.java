@@ -1,5 +1,7 @@
 package com.example.todoapp;
 
+import android.widget.CheckBox;
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -8,6 +10,9 @@ public class Task {
     private String name;
     private Date date;
     private boolean done;
+    private Category category;
+    private CheckBox checkBox;
+
 
     public Task(){
         id = UUID.randomUUID();
@@ -16,10 +21,6 @@ public class Task {
 
     public void setName(String n) {
         this.name = n;
-    }
-
-    public Date getDate() {
-        return date;
     }
 
     public boolean isDone() {
@@ -36,5 +37,29 @@ public class Task {
 
     public String getName() {
         return name;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public CheckBox getCheckBox() {
+        return checkBox;
+    }
+
+    public void setCheckBox(CheckBox checkBox) {
+        this.checkBox = checkBox;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
